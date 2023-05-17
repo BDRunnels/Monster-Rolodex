@@ -12,6 +12,8 @@ const App = () => {
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
+  console.log('rendered');
+
   useEffect(() => {
     fetchMonsters();
   },[]);
