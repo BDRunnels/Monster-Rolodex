@@ -1,16 +1,19 @@
 // import { Component } from "react";
-
+import { Monster } from "../../App";
 import Card from "../card/card";
 import "./card-list.css";
 
-const CardList = (props) => { //forwardRef (2-4% of the time, MAX)
-    const { monsters } = props;
-    
+type CardListProps = {
+    monsters: Monster[];
+};
+
+const CardList = ({ monsters }: CardListProps) => { //forwardRef (2-4% of the time, MAX)
+        
     return(
         <div className="card-list"> 
-            {monsters.map((monster, idx) => {
+            {monsters.map((monster) => {
                 return (
-                    <Card monster={monster} idx={idx} key={idx}/>
+                    <Card monster={monster} key={monster.id}/>
                 );
             })}
         </div>
